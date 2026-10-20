@@ -9,7 +9,8 @@ on:
         options:
           - apply
           - destroy
-        default: apply
+          - plan
+        default: plan
       working-directory:
         description: "Diretorio onde esta o codigo Terraform"
         type: string
