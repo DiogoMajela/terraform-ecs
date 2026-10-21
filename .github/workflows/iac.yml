@@ -9,8 +9,7 @@ on:
         options:
           - apply
           - destroy
-          - plan
-        default: plan
+        default: apply
       working-directory:
         description: "Diretorio onde esta o codigo Terraform"
         type: string
@@ -21,8 +20,15 @@ permissions:
   contents: read
 
 jobs:
-  terraform-job:
+  plan:
     uses: DiogoMajela/terraform-reusable/.github/workflows/terraform-plan.yml@main
+    with:
+      action: ${{ inputs.action }}
+      working-directory: ${{ inputs.working-directory }}
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+  apply:
+    uses: DiogoMajela/terraform-reusable/.github/workflows/template.yml@main
     with:
       action: ${{ inputs.action }}
       working-directory: ${{ inputs.working-directory }}
