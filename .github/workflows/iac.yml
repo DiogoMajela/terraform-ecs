@@ -20,14 +20,7 @@ permissions:
   contents: read
 
 jobs:
-  plan:
-    uses: DiogoMajela/terraform-reusable/.github/workflows/terraform-plan.yml@main
-    with:
-      action: ${{ inputs.action }}
-      working-directory: ${{ inputs.working-directory }}
-    secrets:
-      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-  apply:
+  terraform-job:
     uses: DiogoMajela/terraform-reusable/.github/workflows/template.yml@main
     with:
       action: ${{ inputs.action }}
