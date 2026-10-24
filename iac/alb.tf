@@ -5,7 +5,8 @@ resource "aws_lb" "app" {
   security_groups    = [aws_security_group.alb.id]
   subnets            = local.public_subnet_ids
 
-  enable_delete_protection = false
+  enable_deletion_protection = false
+
   tags                     = var.common_tags
 }
 
