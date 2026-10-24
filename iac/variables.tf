@@ -55,7 +55,7 @@ variable "certificate_arn" {
 variable "common_tags" {
   type = map(string)
   default = {
-    Project     = "platform-engineering"
+    Project     = "platformengineering"
     Environment = "production"
     ManagedBy   = "terraform"
     Owner       = "Diogo"

@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "app" {
-  name                 = "platform-engineering/sorteador"
+  name                 = "platformengineering/sorteador"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
